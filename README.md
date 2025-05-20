@@ -5,19 +5,20 @@ To implement QR decomposition algorithm using the Gram-Schmidt method.
 1.	Hardware – PCs
 2.	Anaconda – Python 3.7 Installation / Moodle-Code Runner
 ## Algorithm:
-1.	Intialize the matrix Q and u
-2.	The vector u and e is given by
-
-    ![eqn1](./ex4.jpg)
-
-    ![eqn2](./ex6.jpg)
-
-    ![eqn3](./ex3.jpg)
-
-3.	Obtain the Q matrix   
-    ![eqn4](./ex1.jpg)
-4.	Construct the upper triangular matrix R
-    ![eqn5](./ex2.jpg)
+```
+1.Start with a matrix A that you want to decompose (having n rows and m columns).
+2.Initialize two matrices:
+ Q to store the orthonormal vectors (same shape as A).
+ R to store coefficients (upper triangular with shape m x m).
+3.Loop through each column of matrix A one by one.
+4.For the current column, start with the original column from A.
+5.Subtract projections on previously computed columns of Q to make the current vector orthogonal to them.
+6.Store the projection coefficients in matrix R as you compute them.
+7.Normalize the resulting orthogonal vector to make its length 1.
+8.Store the normalized vector in the corresponding column of matrix Q.
+9.Repeat this process for all columns of A.
+10.Return or display the matrices Q (orthonormal) and R (upper triangular), such that multiplying Q and R gives you the original matrix A.
+```
 
 
 
